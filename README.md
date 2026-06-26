@@ -2,85 +2,51 @@
 
 ## Project Overview
 
-ATM Banking System is a console-based banking application developed using Python and MySQL. The project simulates basic ATM operations and stores account information in a MySQL database.
+A Python-based ATM Banking System that uses MySQL as the backend database. The project demonstrates database connectivity, account management, and banking operations.
 
 ## Technologies Used
 
 * Python
 * MySQL
+* PyMySQL
+* Git & GitHub
 * PyCharm
-* Git
-* GitHub
 
-## Features
+## Features Implemented
 
-* Create Account
-* User Login using PIN
-* Deposit Money
-* Withdraw Money
-* Balance Enquiry
-* Change PIN
-* Exit System
+### ✅ Account Creation
 
-## Database
+* Create new account
+* Store account details in MySQL
+* Duplicate account number validation
 
-Database Name:
+### ✅ Database Module
 
-```text
-atm_system
-```
+* Separate database connection module (`db_connection.py`)
+* Reusable connection function
 
-Table:
+## Database Schema
 
-```text
-accounts
-```
-
-Fields:
-
-```text
-acc_no
-name
-pin
-balance
-```
+| Column  | Type    |
+| ------- | ------- |
+| acc_no  | Integer |
+| name    | Varchar |
+| pin     | Integer |
+| balance | Float   |
 
 ## Project Structure
 
-```text
 ATM-Banking-System/
-│
-├── main.py
-├── README.md
-```
 
-## Current Status
+* main.py
+* db_connection.py
+* create_account.py
+* README.md
 
-### Completed
+## Upcoming Features
 
-* Database Creation
-* Accounts Table Creation
-* Python-MySQL Connection
-* Fetching Account Records
-
-### Upcoming Modules
-
-* Create Account Module
 * Login Module
-* Deposit Module
-* Withdraw Module
-* Balance Enquiry Module
-* Change PIN Module
-
-## Learning Outcomes
-
-This project helps in understanding:
-
-* Python Programming
-* Functions
-* Conditional Statements
-* Loops
-* Database Connectivity
-* CRUD Operations
-* Version Control using Git and GitHub
-
+* Deposit Money
+* Withdraw Money
+* Balance Enquiry
+* Mini Statement
