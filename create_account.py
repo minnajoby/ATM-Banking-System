@@ -1,7 +1,7 @@
 from db_connection import get_connection
-conn = get_connection()
-cur = conn.cursor()
-while True:
+def create_account():
+    conn = get_connection()
+    cur = conn.cursor()
     create_acc_no = int(input('Enter Account Number:'))
     create_name = input('Enter Name:')
     create_pin = int(input('Enter PIN:'))
