@@ -152,5 +152,5 @@ This project helped in understanding:
 * Database-driven application development
 * Modular programming
 * Menu-driven application design
-* Version control using Git and GitHub
+* Version control using Git and GitHub.
 
