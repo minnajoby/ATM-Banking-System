@@ -1,4 +1,3 @@
-import mini_statement
 from create_account import create_account
 from login import login
 from deposit import deposit
@@ -8,7 +7,11 @@ from mini_statement import mini_statement
 while True:
     print("===== ATM BANKING SYSTEM =====\n")
     print("1.Create Account\n2.Login\n3.Deposit\n4.Withdraw\n5.Balance Enquiry\n6.Mini Statement\n7.Exit\n")
-    choice = int(input("Enter Your Choice:"))
+    try:
+        choice = int(input("Enter Your Choice:"))
+    except ValueError:
+        print("Please enter a valid number")
+        continue
     if choice == 1:
         create_account()
     elif choice == 2:
