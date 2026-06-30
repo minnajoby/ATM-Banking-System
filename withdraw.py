@@ -21,7 +21,7 @@ def withdraw():
                 new_balance = current_balance - amount
                 cur.execute('update accounts set balance = %s where acc_no = %s',(new_balance,withdraw_acc_no,))
                 transaction_date = datetime.now()
-                cur.execute('insert into transactions(acc_no,transaction_type,amount,transaction_date) values(%s,%s,%s,%s)',(withdraw_acc_no,'withdraw',amount,transaction_date,))
+                cur.execute('insert into transactions(acc_no,transaction_type,amount,transaction_date) values(%s,%s,%s,%s)',(withdraw_acc_no,'Withdraw',amount,transaction_date,))
                 conn.commit()
                 print("Withdrawal Successful")
                 print("Updated Balance:",new_balance)
