@@ -7,6 +7,9 @@ def transfer():
     sender_pin = int(input("Enter Sender PIN:"))
     receiver_acc_no = int(input("Enter Receiver Account Number:"))
     amount = float(input("Enter Transfer Amount:"))
+    if sender_acc_no == receiver_acc_no:
+        print("Cannot transfer to same account")
+        return
     if amount <= 0:
         print("Invalid Amount")
         return
@@ -43,4 +46,5 @@ def transfer():
     )
     conn.commit()
     print("Transfer Successful")
+    print("Amount Transferred:", amount)
     print("Sender New Balance:", new_sender_balance)
