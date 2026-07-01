@@ -1,4 +1,5 @@
 from db_connection import get_connection
+from datetime import datetime
 
 def transfer():
     conn = get_connection()
@@ -44,6 +45,9 @@ def transfer():
         'update accounts set balance = %s where acc_no = %s',
         (new_receiver_balance, receiver_acc_no)
     )
+    transaction_date = datetime.now()
+    cur.execute('insert into transactions(acc_no,transaction_type,amount,transaction_date) values(%s,%s,%s,%s)', (sender_acc_no,'Transfer Out',amount,transaction_date,))
+    cur.execute('insert into transactions(acc_no,transaction_type,amount,transaction_date) values(%s,%s,%s,%s)', (receiver_acc_no, 'Transfer In', amount, transaction_date,))
     conn.commit()
     print("Transfer Successful")
     print("Amount Transferred:", amount)
